@@ -1,0 +1,45 @@
+* {
+  font-family: Roboto, system-ui, -apple-system, Oxygen, Ubuntu 'Open Sans',
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.main-container {
+  overflow-y: auto;
+  background-color: #999999;
+  width: 500px;
+  height: 600px;
+  border: 0;
+}
+
+.MuiBadge-badge.MuiBadge-standard.MuiBadge-anchorOriginTopRight.MuiBadge-anchorOriginTopRightRectangular {
+  background-color: #9afc8f;
+  color: #000;
+}
+
+input.search-bar {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: rgb(100, 100, 100, 0.6);
+  color: #fff;
+  box-sizing: border-box;
+  letter-spacing: 1.2px;
+  opacity: 0.8;
+}
+
+input.search-bar::placeholder {
+  color: #fff;
+}
+
+input.search-bar:focus {
+  outline: none;
+}
