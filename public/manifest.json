@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Tabbly",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "An extension that help you save and manage your favourite tabs and easily access them at any time.",
   "icons": {
     "16": "logo.png",
@@ -19,6 +19,5 @@
     },
     "default_popup": "index.html"
   },
-  "permissions": ["storage", "tabs", "activeTab", "unlimitedStorage"],
-  "host_permissions": ["http://*/*", "https://*/*"]
+  "permissions": ["storage", "tabs", "activeTab", "unlimitedStorage"]
 }

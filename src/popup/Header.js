@@ -77,22 +77,26 @@ export default function Header({
               </Badge>
             </Tooltip>
           </IconButton>
+
           <Tooltip title="Add Tab" placement="right" followCursor>
             <StyledFab aria-label="add" onClick={addNewTab}>
               <AddIcon />
             </StyledFab>
           </Tooltip>
           <Box sx={{ flexGrow: 1 }} />
+
           <IconButton onClick={refreshTabList} color="inherit">
             <Tooltip title="Refresh">
               <RefreshIcon />
             </Tooltip>
           </IconButton>
+
           <IconButton color="inherit">
             <Tooltip title="Settings">
               <SettingsIcon onClick={openSettingsModal} />
             </Tooltip>
           </IconButton>
+
           <IconButton
             aria-controls="menu-appbar"
             aria-haspopup="true"
@@ -103,6 +107,7 @@ export default function Header({
               <MoreIcon />
             </Tooltip>
           </IconButton>
+
           <Menu
             id="menu-appbar"
             anchorEl={anchorEl}

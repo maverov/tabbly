@@ -1,16 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import ReactDOM from 'react-dom';
-
 import Header from './Header';
 import TabItem from '../components/TabItem';
-import SettingsModal from '../components/SettingsModal';
-
-import { TransitionGroup } from 'react-transition-group';
 import Collapse from '@mui/material/Collapse';
+import SettingsModal from '../components/SettingsModal';
+import { TransitionGroup } from 'react-transition-group';
 import Box from '@mui/material/Box';
 
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import './Popup.css';
 
@@ -24,9 +20,9 @@ const Popup = () => {
     chrome.action.setBadgeBackgroundColor({ color: '#9afc8f' }, () => {
       return;
     });
-  }, []);
+  }, [updateTabData]);
 
-  const updateTabData = () => {
+  const updateTabData = useCallback(() => {
     chrome.storage.local.get(['tabs']).then((result) => {
       if (result.tabs) {
         setTabs(result.tabs);
@@ -38,14 +34,13 @@ const Popup = () => {
         );
       }
     });
-  };
+  }, []);
 
-  const handleClearTabs = () => {
+  const handleClearTabs = useCallback(() => {
     chrome.storage.local.set({ tabs: [] }).then(() => {
-      return;
+      updateTabData();
     });
-    updateTabData();
-  };
+  }, [updateTabData]);
 
   const handleDeleteTab = (passedTab) => {
     const updatedTabsArray = tabs.filter((tab) => tab.url !== passedTab.url);
@@ -208,3 +203,17 @@ const Popup = () => {
 };
 
 ReactDOM.render(<Popup />, document.getElementById('root'));
+
+function transformToObjects(numberArray) {
+  // Todo: Add your logic
+  // should return an array of objects
+  const newArray = numberArray.map((item) => {
+    return {
+      val: item,
+    };
+  });
+
+  return newArray;
+}
+
+console.log(transformToObjects([1, 2, 3]));
