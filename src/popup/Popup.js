@@ -203,17 +203,3 @@ const Popup = () => {
 };
 
 ReactDOM.render(<Popup />, document.getElementById('root'));
-
-function transformToObjects(numberArray) {
-  // Todo: Add your logic
-  // should return an array of objects
-  const newArray = numberArray.map((item) => {
-    return {
-      val: item,
-    };
-  });
-
-  return newArray;
-}
-
-console.log(transformToObjects([1, 2, 3]));
